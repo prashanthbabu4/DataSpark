@@ -55,7 +55,7 @@ JOIN customer c ON s.CustomerKey = c.CustomerKey
 GROUP BY c.Name
 HAVING COUNT(DISTINCT s.StoreKey) > 5;
 
--- 10. Get the total quantity of products sold per month (duplicate of #8)
+-- 10. Get the total quantity of products sold per month (8 and 10 same)
 SELECT EXTRACT(MONTH FROM s.OrderDate) AS Month, SUM(s.Quantity) AS Total_Quantity
 FROM sales s
 GROUP BY Month;
